@@ -1,0 +1,21 @@
+button
+{
+    background-color: aquamarine;
+}
+
+.buttons
+{
+    text-align: center;
+    margin:10px;
+
+}
+.save
+{
+    margin-right: 5px;
+    background-color: rgb(17, 226, 45);
+}
+
+.cancel
+{
+    background-color: red;
+}
