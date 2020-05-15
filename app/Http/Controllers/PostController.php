@@ -22,14 +22,14 @@ class PostController extends Controller
     {
         $post = new Post();
 
-        $path = $request->file('archive')->store('images', 'public');
+        $path = $request->file('archive')->store('imagens', 'public');
         
         $post->name = $request->name;
         $post->email = $request->email;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
-        $post->mensagem = $request->mensagem;
-        $post->path = $path;
+        $post->message = $request->message;
+        $post->archive = $path;
         $post->likes = 0;
         
         $post->save();
@@ -43,7 +43,7 @@ class PostController extends Controller
         if(isset($post)){
             Storage::disk('public')->delete($post->archive);
             $post->delete();
-            return response('Este Post foi deletado', 404);
+            return  204;
         }
         return response('Post não encontrado', 404);
     }

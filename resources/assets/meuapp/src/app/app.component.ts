@@ -27,7 +27,7 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe(
       (result)=>{
         if (result){
-          console.log(result);
+          this.postService.save(result.post, result.archive);
         }
       }
     );
