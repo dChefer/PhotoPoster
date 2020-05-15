@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@store');
+Route::get('/{id}', 'PostController@destroy');
+Route::get('/like/{id}', 'PostController@like');
+

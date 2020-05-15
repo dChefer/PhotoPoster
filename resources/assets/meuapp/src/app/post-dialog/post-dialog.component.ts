@@ -9,7 +9,8 @@ import { Post } from '../post';
 })
 export class PostDialogComponent implements OnInit {
 
-  private data = {
+  public archiveName: string='';
+  public data = {
     post: new Post("","","","","",""),
     archive: null
   }
@@ -20,4 +21,20 @@ export class PostDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changeFile(event)
+  {
+    // console.log(event.target.files[0]);
+    this.archiveName = event.target.files[0].name;
+    this.data.archive = event.target.files[0];
+  }
+
+  save()
+  {
+    this.dialogRef.close(this.data);
+  }
+
+  cancel()
+  {
+    this.dialogRef.close(null)
+  }
 }

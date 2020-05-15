@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { PostService } from './post.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,10 @@ import { PostDialogComponent } from './post-dialog/post-dialog.component';
   entryComponents: [
     PostDialogComponent,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/resources/assets/meuapp'}],
+  providers: [
+    {provide: APP_BASE_HREF, useValue: '/resources/assets/meuapp'},
+    PostService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
