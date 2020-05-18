@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $post = new Post();
 
-        $path = $request->file('archive')->store('imagens', 'public');
+        $path = $request->file('archive')->store('images', 'public');
         
         $post->name = $request->name;
         $post->email = $request->email;
